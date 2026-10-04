@@ -1,0 +1,15 @@
+﻿
+# Large datasets
+data/**/*.parquet
+
+# Notebook and Python caches
+.ipynb_checkpoints/
+__pycache__/
+*.py[cod]
+
+# Spark checkpoints and temporary files
+checkpoints/
+spark-warehouse/
+metastore_db/
+derby.log
+*.tmp
