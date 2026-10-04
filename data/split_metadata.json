@@ -210,5 +210,21 @@
         "metadata": {}
       }
     ]
+  },
+  "part_a_split": {
+    "seed": 43,
+    "weight_basis": "Saved training and evaluation pool",
+    "fitting": {
+      "weight": 0.7,
+      "record_count": 19528442
+    },
+    "validation": {
+      "weight": 0.15,
+      "record_count": 4182941
+    },
+    "final_test": {
+      "weight": 0.15,
+      "record_count": 4184433
+    }
   }
 }
