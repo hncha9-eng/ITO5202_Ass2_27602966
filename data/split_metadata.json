@@ -1,0 +1,214 @@
+{
+  "dataset": "NYC TLC Yellow Taxi, January\u2013December 2023",
+  "source_files": [
+    "yellow_tripdata_2023-01.parquet",
+    "yellow_tripdata_2023-02.parquet",
+    "yellow_tripdata_2023-03.parquet",
+    "yellow_tripdata_2023-04.parquet",
+    "yellow_tripdata_2023-05.parquet",
+    "yellow_tripdata_2023-06.parquet",
+    "yellow_tripdata_2023-07.parquet",
+    "yellow_tripdata_2023-08.parquet",
+    "yellow_tripdata_2023-09.parquet",
+    "yellow_tripdata_2023-10.parquet",
+    "yellow_tripdata_2023-11.parquet",
+    "yellow_tripdata_2023-12.parquet"
+  ],
+  "zone_lookup_file": "taxi_zone_lookup.csv",
+  "spark_version": "3.5.5",
+  "session_timezone": "America/New_York",
+  "seed": 42,
+  "weights": {
+    "training_pool": 0.75,
+    "streaming_holdout": 0.25
+  },
+  "raw_record_count": 38310226,
+  "eligible_record_count": 37192160,
+  "training_pool": {
+    "path": "data/train_data.parquet",
+    "record_count": 27895816
+  },
+  "streaming_holdout": {
+    "path": "data/stream_data.parquet",
+    "record_count": 9296344
+  },
+  "parquet_schema": {
+    "type": "struct",
+    "fields": [
+      {
+        "name": "DOLocationID",
+        "type": "long",
+        "nullable": true,
+        "metadata": {}
+      },
+      {
+        "name": "PULocationID",
+        "type": "long",
+        "nullable": true,
+        "metadata": {}
+      },
+      {
+        "name": "VendorID",
+        "type": "long",
+        "nullable": true,
+        "metadata": {}
+      },
+      {
+        "name": "tpep_pickup_datetime",
+        "type": "timestamp",
+        "nullable": true,
+        "metadata": {}
+      },
+      {
+        "name": "tpep_dropoff_datetime",
+        "type": "timestamp",
+        "nullable": true,
+        "metadata": {}
+      },
+      {
+        "name": "passenger_count",
+        "type": "double",
+        "nullable": true,
+        "metadata": {}
+      },
+      {
+        "name": "trip_distance",
+        "type": "double",
+        "nullable": true,
+        "metadata": {}
+      },
+      {
+        "name": "RatecodeID",
+        "type": "double",
+        "nullable": true,
+        "metadata": {}
+      },
+      {
+        "name": "store_and_fwd_flag",
+        "type": "string",
+        "nullable": true,
+        "metadata": {}
+      },
+      {
+        "name": "payment_type",
+        "type": "long",
+        "nullable": true,
+        "metadata": {}
+      },
+      {
+        "name": "fare_amount",
+        "type": "double",
+        "nullable": true,
+        "metadata": {}
+      },
+      {
+        "name": "extra",
+        "type": "double",
+        "nullable": true,
+        "metadata": {}
+      },
+      {
+        "name": "mta_tax",
+        "type": "double",
+        "nullable": true,
+        "metadata": {}
+      },
+      {
+        "name": "tip_amount",
+        "type": "double",
+        "nullable": true,
+        "metadata": {}
+      },
+      {
+        "name": "tolls_amount",
+        "type": "double",
+        "nullable": true,
+        "metadata": {}
+      },
+      {
+        "name": "improvement_surcharge",
+        "type": "double",
+        "nullable": true,
+        "metadata": {}
+      },
+      {
+        "name": "total_amount",
+        "type": "double",
+        "nullable": true,
+        "metadata": {}
+      },
+      {
+        "name": "congestion_surcharge",
+        "type": "double",
+        "nullable": true,
+        "metadata": {}
+      },
+      {
+        "name": "airport_fee",
+        "type": "double",
+        "nullable": true,
+        "metadata": {}
+      },
+      {
+        "name": "pickup_date",
+        "type": "date",
+        "nullable": true,
+        "metadata": {}
+      },
+      {
+        "name": "trip_duration_minutes",
+        "type": "double",
+        "nullable": true,
+        "metadata": {}
+      },
+      {
+        "name": "pickup_borough",
+        "type": "string",
+        "nullable": true,
+        "metadata": {}
+      },
+      {
+        "name": "pickup_zone",
+        "type": "string",
+        "nullable": true,
+        "metadata": {}
+      },
+      {
+        "name": "pickup_service_zone",
+        "type": "string",
+        "nullable": true,
+        "metadata": {}
+      },
+      {
+        "name": "pickup_lookup_matched",
+        "type": "boolean",
+        "nullable": true,
+        "metadata": {}
+      },
+      {
+        "name": "dropoff_borough",
+        "type": "string",
+        "nullable": true,
+        "metadata": {}
+      },
+      {
+        "name": "dropoff_zone",
+        "type": "string",
+        "nullable": true,
+        "metadata": {}
+      },
+      {
+        "name": "dropoff_service_zone",
+        "type": "string",
+        "nullable": true,
+        "metadata": {}
+      },
+      {
+        "name": "dropoff_lookup_matched",
+        "type": "boolean",
+        "nullable": true,
+        "metadata": {}
+      }
+    ]
+  }
+}

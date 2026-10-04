@@ -72,3 +72,26 @@ assert not missing_files, f"Missing source files: {missing_files}"
 ```
 
 All thirteen filenames should be reported as **FOUND**. This checks file visibility; data schemas and contents are validated during assessment development.
+
+## Generated Assessment 2 Subsets
+
+After downloading the source files, run Sections 1, 2.1 and 2.2 of
+`assessment2.ipynb` in the documented Docker environment,
+with the notebook opened from the repository root.
+
+The notebook applies the eligibility rules and creates a random split
+with seed 42 and weights of 75% for training/evaluation and 25% for
+streaming. Actual counts are verified and recorded in
+`data/split_metadata.json`.
+
+Generated datasets:
+
+- `data/train_data.parquet`: training and evaluation pool for Part A.
+- `data/stream_data.parquet`: held-out input for the Part B Kafka producer.
+
+Each Parquet path is a directory containing multiple part files.
+Both datasets are reloaded to verify their record counts and schemas.
+
+The generated Parquet datasets are excluded from Git and can be
+regenerated through the notebook. The small split metadata JSON file
+is included in the repository.

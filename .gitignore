@@ -13,3 +13,5 @@ spark-warehouse/
 metastore_db/
 derby.log
 *.tmp
+data/train_data.parquet/
+data/stream_data.parquet/
