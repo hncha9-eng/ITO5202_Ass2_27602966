@@ -15,3 +15,8 @@ derby.log
 *.tmp
 data/train_data.parquet/
 data/stream_data.parquet/
+
+# Include the complete saved Assessment 2 pipeline
+!models/
+!models/a2_model/
+!models/a2_model/**
