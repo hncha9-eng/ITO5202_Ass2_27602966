@@ -302,6 +302,56 @@ docker stop zookeeper
 
 Reuse the existing containers with the startup commands when resuming work.
 
+## Kafka Producer Verification
+
+Commands run in host PowerShell unless otherwise stated.
+
+### Start the existing services
+
+Start Docker Desktop, then run:
+
+```powershell
+docker start zookeeper
+docker start kafka
+docker start ito5202-a2
+docker ps --filter network=ito5202
+```
+
+The notebook's Part B, Section 2.3 creates missing topics and waits for
+their partition leaders to become available.
+
+On a fresh Kafka broker, the equivalent topic creation commands are:
+
+```powershell
+docker exec ito5202-a2 python -m kafka.admin -b kafka:9092 topics create -t a2_taxi_events --num-partitions 2 --replication-factor 1
+docker exec ito5202-a2 python -m kafka.admin -b kafka:9092 topics create -t a2_taxi_producer_test --num-partitions 2 --replication-factor 1
+```
+
+### Run the standalone producer test
+
+```powershell
+docker exec -w /home/student/work ito5202-a2 python producer.py --bootstrap-servers kafka:9092 --topic a2_taxi_producer_test --batch-size 1000 --max-batches 3
+```
+
+This sends three JSON-array messages containing 3,000 held-out records,
+with a five-second pause between batches. Successful deliveries are
+logged to stdout with their publication timestamps, counts, byte lengths,
+partitions and offsets.
+
+The notebook also runs this test, captures its logs, checks publication
+intervals and verifies the received messages using a bounded Spark Kafka
+read.
+
+### Shutdown after finishing the work session
+
+Stop active streaming queries and save the notebook before running:
+
+```powershell
+docker stop ito5202-a2
+docker stop kafka
+docker stop zookeeper
+```
+
 ## References
 
 - [PowerShell Get-Location](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.management/get-location)
