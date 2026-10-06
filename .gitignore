@@ -9,6 +9,7 @@ __pycache__/
 
 # Spark checkpoints and temporary files
 checkpoints/
+output/streaming/
 spark-warehouse/
 metastore_db/
 derby.log
@@ -20,3 +21,4 @@ data/stream_data.parquet/
 !models/
 !models/a2_model/
 !models/a2_model/**
+

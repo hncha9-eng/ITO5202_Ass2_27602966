@@ -1,0 +1,23 @@
+{
+  "purpose": "Three-batch consumer integration test",
+  "run_id": "20261006T083743Z_3afaf495",
+  "topic": "a2_taxi_events",
+  "starting_offsets": {
+    "a2_taxi_events": {
+      "0": 0,
+      "1": 0
+    }
+  },
+  "batch_size": 1000,
+  "producer_batches": 3,
+  "trigger_interval": "5 seconds",
+  "model_path": "models/a2_model",
+  "integrity_checks": {
+    "prediction_records": 3000,
+    "unique_record_identifiers": 3000,
+    "kafka_messages": 3,
+    "invalid_predictions": 0,
+    "invalid_timestamps": 0,
+    "negative_predictions": 0
+  }
+}

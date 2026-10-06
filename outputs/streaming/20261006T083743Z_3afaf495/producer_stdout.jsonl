@@ -1,0 +1,5 @@
+{"action": "started", "dry_run": false, "topic": "a2_taxi_events", "source_files": 17, "batch_size": 1000, "max_batches": 3, "pause_seconds": 5}
+{"action": "published_batch", "batch": 1, "records": 1000, "event_timestamp": "2026-10-06T08:38:28.107162+00:00", "topic": "a2_taxi_events", "payload_bytes": 296790, "cumulative_records": 1000, "interval_seconds": null, "partition": 1, "offset": 0, "delivery_seconds": 0.840409}
+{"action": "published_batch", "batch": 2, "records": 1000, "event_timestamp": "2026-10-06T08:38:33.999657+00:00", "topic": "a2_taxi_events", "payload_bytes": 298138, "cumulative_records": 2000, "interval_seconds": 5.892363, "partition": 0, "offset": 0, "delivery_seconds": 0.580828}
+{"action": "published_batch", "batch": 3, "records": 1000, "event_timestamp": "2026-10-06T08:38:39.660970+00:00", "topic": "a2_taxi_events", "payload_bytes": 300947, "cumulative_records": 3000, "interval_seconds": 5.66142, "partition": 0, "offset": 1, "delivery_seconds": 0.348544}
+{"action": "completed", "dry_run": false, "batches": 3, "records_processed": 3000, "elapsed_seconds": 12.677}
