@@ -1,24 +1,37 @@
-﻿
-# Large datasets
-data/**/*.parquet
+﻿# Large source files and generated Spark Parquet datasets.
+# These paths can be files or directories; restore them via data/README.md.
+/data/**/*.parquet
+/data/**/*.download
 
-# Notebook and Python caches
+# Notebook, Python and local environment caches.
 .ipynb_checkpoints/
 __pycache__/
 *.py[cod]
+.pytest_cache/
+/.venv/
+/venv/
 
-# Spark checkpoints and temporary files
-checkpoints/
-output/streaming/
-spark-warehouse/
-metastore_db/
+# Spark checkpoints and temporary local database files.
+/checkpoints/
+/spark-warehouse/
+/metastore_db/
 derby.log
 *.tmp
-data/train_data.parquet/
-data/stream_data.parquet/
+*.temp
 
-# Include the complete saved Assessment 2 pipeline
-!models/
-!models/a2_model/
-!models/a2_model/**
+# Large streaming sinks. Keep the small JSON/JSONL verification evidence.
+/outputs/streaming/*/predictions/
+/outputs/streaming/*/finalised_windows/
 
+# Intermediate HTML export; retain the submitted notebook and PDF.
+/27602966_assessment2.html
+
+# Operating-system metadata.
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Include the complete persisted pipeline, including its internal Parquet files.
+!/models/
+!/models/a2_model/
+!/models/a2_model/**

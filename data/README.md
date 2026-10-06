@@ -1,97 +1,63 @@
-# Dataset Instructions
+# Dataset restoration and split documentation
 
-## Dataset reuse
+## Approved source data
 
-Assessment 2 uses the same approved dataset as Assessment 1: the twelve monthly 2023 New York City Yellow Taxi Parquet files published by the NYC Taxi and Limousine Commission, together with the Taxi Zone Lookup CSV.
+Assessment 2 reuses the approved Assessment 1 dataset: all twelve monthly NYC TLC Yellow Taxi Parquet files for `2023`, together with the Taxi Zone Lookup CSV. Reuse the existing Assessment 1 copies when available. The monthly source files and generated Parquet subsets remain local because of their size.
 
-Reuse the existing Assessment 1 files when setting up Assessment 2. All thirteen expected filenames were confirmed as visible inside the Assessment 2 Docker container during setup.
+The [official NYC TLC Trip Record Data page](https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page) provides the source downloads and the Yellow Taxi data dictionary. The table below lists the exact expected filenames.
 
-The Parquet source files are kept locally because of their size. These instructions allow a reviewer to restore the inputs.
-
-## Required files
-
-| Month | Filename and official download |
+| Month or reference | Filename and official download |
 | --- | --- |
-| January 2023 | [yellow_tripdata_2023-01.parquet](https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2023-01.parquet) |
-| February 2023 | [yellow_tripdata_2023-02.parquet](https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2023-02.parquet) |
-| March 2023 | [yellow_tripdata_2023-03.parquet](https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2023-03.parquet) |
-| April 2023 | [yellow_tripdata_2023-04.parquet](https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2023-04.parquet) |
-| May 2023 | [yellow_tripdata_2023-05.parquet](https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2023-05.parquet) |
-| June 2023 | [yellow_tripdata_2023-06.parquet](https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2023-06.parquet) |
-| July 2023 | [yellow_tripdata_2023-07.parquet](https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2023-07.parquet) |
-| August 2023 | [yellow_tripdata_2023-08.parquet](https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2023-08.parquet) |
-| September 2023 | [yellow_tripdata_2023-09.parquet](https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2023-09.parquet) |
-| October 2023 | [yellow_tripdata_2023-10.parquet](https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2023-10.parquet) |
-| November 2023 | [yellow_tripdata_2023-11.parquet](https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2023-11.parquet) |
-| December 2023 | [yellow_tripdata_2023-12.parquet](https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2023-12.parquet) |
+| January `2023` | [yellow_tripdata_2023-01.parquet](https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2023-01.parquet) |
+| February `2023` | [yellow_tripdata_2023-02.parquet](https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2023-02.parquet) |
+| March `2023` | [yellow_tripdata_2023-03.parquet](https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2023-03.parquet) |
+| April `2023` | [yellow_tripdata_2023-04.parquet](https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2023-04.parquet) |
+| May `2023` | [yellow_tripdata_2023-05.parquet](https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2023-05.parquet) |
+| June `2023` | [yellow_tripdata_2023-06.parquet](https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2023-06.parquet) |
+| July `2023` | [yellow_tripdata_2023-07.parquet](https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2023-07.parquet) |
+| August `2023` | [yellow_tripdata_2023-08.parquet](https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2023-08.parquet) |
+| September `2023` | [yellow_tripdata_2023-09.parquet](https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2023-09.parquet) |
+| October `2023` | [yellow_tripdata_2023-10.parquet](https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2023-10.parquet) |
+| November `2023` | [yellow_tripdata_2023-11.parquet](https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2023-11.parquet) |
+| December `2023` | [yellow_tripdata_2023-12.parquet](https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2023-12.parquet) |
 | Taxi zones | [taxi_zone_lookup.csv](https://d37ci6vzurychx.cloudfront.net/misc/taxi_zone_lookup.csv) |
 
-The lookup table associates pickup and dropoff location IDs with borough and zone information.
+Place these thirteen files directly in the repository's `data/` folder. The main README mounts the repository at `/home/student/work`, so the same files appear inside the container at `/home/student/work/data`.
 
-The monthly links are also available on the [official NYC TLC Trip Record Data page](https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page). Select **2023 → Yellow Taxi Trip Records** for January through December.
+Follow the [main README](../README.md) for container creation, packages and startup. In `27602966_assessment2.ipynb`, **Dataset Sources and Input Verification** prints all expected filenames and rejects missing files. **Schema Inspection and Standardised Loading** checks file contents and reconciles the monthly schemas, including numeric types and the `airport_fee` / `Airport_fee` naming difference.
 
-## File placement
+## Eligibility and zone enrichment
 
-Place all thirteen source files directly inside the **data** folder in your local repository:
+Run the notebook's **Execution Environment** and then **Dataset Reuse and Train/Stream Split** sections in order. Eligibility requires a pickup in `2023`, finite positive trip distance and duration, and a finite non-negative fare. Missing passenger counts and rate codes are handled by the fitted preprocessing pipeline rather than removing those records. The Taxi Zone Lookup enriches pickup and drop-off locations; its unique keys and join cardinality are checked before splitting.
 
-```text
-data/
-```
+The executed source analysis contains `38,310,226` raw trips and `37,192,160` eligible trips. The lookup contains `265` unique location IDs, and the validated joins preserve the eligible count. Each rerun prints its source, eligibility and join checks; `data/split_metadata.json` records the regenerated split evidence.
 
-The repository can be stored in a folder of your choice. Follow the container creation commands in the [main README](../README.md) from the repository root to mount that checkout.
+## Reproduce the saved subsets
 
-The Docker bind mount exposes its data folder at:
+The outer split uses seed `42` with weights `[0.75, 0.25]` after eligibility and enrichment. The training/evaluation pool and streaming holdout are disjoint. The internal Part A split uses seed `43` with weights `[0.70, 0.15, 0.15]` within the training/evaluation pool.
 
-```text
-/home/student/work/data
-```
+| Subset | Reference record count | Use and location |
+| --- | --- | --- |
+| Training/evaluation pool | `27,895,816` | Saved as `data/train_data.parquet/`; supplies only Part A fitting and evaluation. |
+| Streaming holdout | `9,296,344` | Saved as `data/stream_data.parquet/`; supplies the Part B producer. |
+| Fitting | `19,528,442` | Internal Part A subset for exploration, preprocessing and regressor fitting. |
+| Validation | `4,182,941` | Internal Part A subset for comparison and final model selection. |
+| Final test | `4,184,433` | Internal Part A subset for the selected model's reported evaluation. |
 
-## Verify file access
+Reference counts describe the executed analysis. The notebook checks actual proportions and reconciliation on each run. The outer split exceeds the assessment's minimum training/evaluation and streaming proportions. Validation and final-test records stay within Part A; streaming records remain outside all model fitting and evaluation.
 
-Run the following in a Jupyter notebook inside the PySpark container:
+**Subset Persistence and Reload Verification** writes both outer subsets, reloads them, checks counts and column signatures, and saves `data/split_metadata.json`. These Parquet paths are directories containing part files, not single files. The internal fitting, validation and final-test subsets are derived in the notebook; they are not separately saved datasets.
 
-```python
-from pathlib import Path
+Use the same source copies, Spark version, standardisation logic and seeds when regenerating. Part B reads the persisted holdout directly; the producer does not repeat the split. If only a generated subset is missing, run the preparation and split sections before Part B. Full model reproduction also runs Part A and regenerates `models/a2_model/`.
 
-data_dir = Path("/home/student/work/data")
-required_files = [
-    f"yellow_tripdata_2023-{month:02d}.parquet"
-    for month in range(1, 13)
-] + ["taxi_zone_lookup.csv"]
+## Data use during inference
 
-missing_files = [
-    name for name in required_files
-    if not (data_dir / name).is_file()
-]
+The saved datasets retain enriched trip columns. The producer selects the model's eight raw feature inputs and the observed fare for auditing, then adds `event_timestamp` at publication. The saved pipeline performs numerical handling, categorical encoding, vector assembly and scaling during inference. The model does not use the observed fare as a feature.
 
-for name in required_files:
-    status = "FOUND" if (data_dir / name).is_file() else "MISSING"
-    print(f"{status}: {name}")
+Historical pickup timestamps and publication timestamps remain separate. Pickup timestamps supply the historical temporal features; publication timestamps drive streaming windows and watermarking. The notebook uses `America/New_York` for timestamp display and feature extraction, while the producer preserves the stored pickup instant when serialising it as UTC.
 
-assert not missing_files, f"Missing source files: {missing_files}"
-```
+The eligibility rules do not impose an upper fare limit. The largest-error final-test record remains in the official evaluation; its exclusion appears only in the separately labelled sensitivity analysis. That analysis does not alter either persisted subset or the streaming source.
 
-All thirteen filenames should be reported as **FOUND**. This checks file visibility; data schemas and contents are validated during assessment development.
+## Files retained in Git
 
-## Generated Assessment 2 Subsets
-
-After downloading the source files, run Sections 1, 2.1 and 2.2 of
-`assessment2.ipynb` in the documented Docker environment,
-with the notebook opened from the repository root.
-
-The notebook applies the eligibility rules and creates a random split
-with seed 42 and weights of 75% for training/evaluation and 25% for
-streaming. Actual counts are verified and recorded in
-`data/split_metadata.json`.
-
-Generated datasets:
-
-- `data/train_data.parquet`: training and evaluation pool for Part A.
-- `data/stream_data.parquet`: held-out input for the Part B Kafka producer.
-
-Each Parquet path is a directory containing multiple part files.
-Both datasets are reloaded to verify their record counts and schemas.
-
-The generated Parquet datasets are excluded from Git and can be
-regenerated through the notebook. The small split metadata JSON file
-is included in the repository.
+Track this README, `taxi_zone_lookup.csv` and `split_metadata.json`. The root `.gitignore` excludes source Parquet files, generated Parquet directories and incomplete downloads. Restore large datasets with these instructions and the notebook instead of committing them. The complete model under `models/a2_model/` remains tracked, including its internal Parquet files.
