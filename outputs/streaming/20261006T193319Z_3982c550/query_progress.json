@@ -1,0 +1,440 @@
+[
+  {
+    "id": "1ce69c04-1ac2-4c0d-ab50-993dbafa3379",
+    "runId": "38df9d35-eaff-4c18-860e-36a35f742a96",
+    "name": "a2_predictions_parquet",
+    "timestamp": "2026-10-06T19:33:21.073Z",
+    "batchId": 0,
+    "numInputRows": 0,
+    "inputRowsPerSecond": 0.0,
+    "processedRowsPerSecond": 0.0,
+    "durationMs": {
+      "addBatch": 2999,
+      "commitOffsets": 900,
+      "getBatch": 588,
+      "latestOffset": 713,
+      "queryPlanning": 644,
+      "triggerExecution": 6678,
+      "walCommit": 740
+    },
+    "stateOperators": [],
+    "sources": [
+      {
+        "description": "KafkaV2[Subscribe[a2_taxi_events]]",
+        "startOffset": null,
+        "endOffset": {
+          "a2_taxi_events": {
+            "1": 66,
+            "0": 60
+          }
+        },
+        "latestOffset": {
+          "a2_taxi_events": {
+            "1": 66,
+            "0": 60
+          }
+        },
+        "numInputRows": 0,
+        "inputRowsPerSecond": 0.0,
+        "processedRowsPerSecond": 0.0,
+        "metrics": {
+          "avgOffsetsBehindLatest": "0.0",
+          "maxOffsetsBehindLatest": "0",
+          "minOffsetsBehindLatest": "0"
+        }
+      }
+    ],
+    "sink": {
+      "description": "FileSink[/home/student/work/outputs/streaming/20261006T193319Z_3982c550/predictions]",
+      "numOutputRows": -1
+    },
+    "query_name": "a2_predictions_parquet"
+  },
+  {
+    "id": "1ce69c04-1ac2-4c0d-ab50-993dbafa3379",
+    "runId": "38df9d35-eaff-4c18-860e-36a35f742a96",
+    "name": "a2_predictions_parquet",
+    "timestamp": "2026-10-06T19:33:27.755Z",
+    "batchId": 1,
+    "numInputRows": 1,
+    "inputRowsPerSecond": 0.14965579167913798,
+    "processedRowsPerSecond": 0.16957775139901643,
+    "durationMs": {
+      "addBatch": 3412,
+      "commitOffsets": 1545,
+      "getBatch": 0,
+      "latestOffset": 64,
+      "queryPlanning": 181,
+      "triggerExecution": 5897,
+      "walCommit": 689
+    },
+    "stateOperators": [],
+    "sources": [
+      {
+        "description": "KafkaV2[Subscribe[a2_taxi_events]]",
+        "startOffset": {
+          "a2_taxi_events": {
+            "1": 66,
+            "0": 60
+          }
+        },
+        "endOffset": {
+          "a2_taxi_events": {
+            "1": 66,
+            "0": 61
+          }
+        },
+        "latestOffset": {
+          "a2_taxi_events": {
+            "1": 66,
+            "0": 61
+          }
+        },
+        "numInputRows": 1,
+        "inputRowsPerSecond": 0.14965579167913798,
+        "processedRowsPerSecond": 0.16957775139901643,
+        "metrics": {
+          "avgOffsetsBehindLatest": "0.0",
+          "maxOffsetsBehindLatest": "0",
+          "minOffsetsBehindLatest": "0"
+        }
+      }
+    ],
+    "sink": {
+      "description": "FileSink[/home/student/work/outputs/streaming/20261006T193319Z_3982c550/predictions]",
+      "numOutputRows": -1
+    },
+    "query_name": "a2_predictions_parquet"
+  },
+  {
+    "id": "1ce69c04-1ac2-4c0d-ab50-993dbafa3379",
+    "runId": "38df9d35-eaff-4c18-860e-36a35f742a96",
+    "name": "a2_predictions_parquet",
+    "timestamp": "2026-10-06T19:33:33.655Z",
+    "batchId": 2,
+    "numInputRows": 1,
+    "inputRowsPerSecond": 0.1694915254237288,
+    "processedRowsPerSecond": 0.18649757553151808,
+    "durationMs": {
+      "addBatch": 3945,
+      "commitOffsets": 658,
+      "getBatch": 1,
+      "latestOffset": 17,
+      "queryPlanning": 112,
+      "triggerExecution": 5362,
+      "walCommit": 625
+    },
+    "stateOperators": [],
+    "sources": [
+      {
+        "description": "KafkaV2[Subscribe[a2_taxi_events]]",
+        "startOffset": {
+          "a2_taxi_events": {
+            "1": 66,
+            "0": 61
+          }
+        },
+        "endOffset": {
+          "a2_taxi_events": {
+            "1": 67,
+            "0": 61
+          }
+        },
+        "latestOffset": {
+          "a2_taxi_events": {
+            "1": 67,
+            "0": 61
+          }
+        },
+        "numInputRows": 1,
+        "inputRowsPerSecond": 0.1694915254237288,
+        "processedRowsPerSecond": 0.18649757553151808,
+        "metrics": {
+          "avgOffsetsBehindLatest": "0.0",
+          "maxOffsetsBehindLatest": "0",
+          "minOffsetsBehindLatest": "0"
+        }
+      }
+    ],
+    "sink": {
+      "description": "FileSink[/home/student/work/outputs/streaming/20261006T193319Z_3982c550/predictions]",
+      "numOutputRows": -1
+    },
+    "query_name": "a2_predictions_parquet"
+  },
+  {
+    "id": "1ce69c04-1ac2-4c0d-ab50-993dbafa3379",
+    "runId": "38df9d35-eaff-4c18-860e-36a35f742a96",
+    "name": "a2_predictions_parquet",
+    "timestamp": "2026-10-06T19:33:39.019Z",
+    "batchId": 3,
+    "numInputRows": 1,
+    "inputRowsPerSecond": 0.18642803877703207,
+    "processedRowsPerSecond": 0.27793218454697055,
+    "durationMs": {
+      "addBatch": 2378,
+      "commitOffsets": 578,
+      "getBatch": 0,
+      "latestOffset": 12,
+      "queryPlanning": 100,
+      "triggerExecution": 3598,
+      "walCommit": 526
+    },
+    "stateOperators": [],
+    "sources": [
+      {
+        "description": "KafkaV2[Subscribe[a2_taxi_events]]",
+        "startOffset": {
+          "a2_taxi_events": {
+            "1": 67,
+            "0": 61
+          }
+        },
+        "endOffset": {
+          "a2_taxi_events": {
+            "1": 68,
+            "0": 61
+          }
+        },
+        "latestOffset": {
+          "a2_taxi_events": {
+            "1": 68,
+            "0": 61
+          }
+        },
+        "numInputRows": 1,
+        "inputRowsPerSecond": 0.18642803877703207,
+        "processedRowsPerSecond": 0.27793218454697055,
+        "metrics": {
+          "avgOffsetsBehindLatest": "0.0",
+          "maxOffsetsBehindLatest": "0",
+          "minOffsetsBehindLatest": "0"
+        }
+      }
+    ],
+    "sink": {
+      "description": "FileSink[/home/student/work/outputs/streaming/20261006T193319Z_3982c550/predictions]",
+      "numOutputRows": -1
+    },
+    "query_name": "a2_predictions_parquet"
+  },
+  {
+    "id": "616cc088-cc3b-4aec-a45c-b4c7281bad41",
+    "runId": "32fefc64-d676-414d-b4af-a4f6e955e49c",
+    "name": "a2_predictions_console",
+    "timestamp": "2026-10-06T19:33:21.461Z",
+    "batchId": 0,
+    "numInputRows": 0,
+    "inputRowsPerSecond": 0.0,
+    "processedRowsPerSecond": 0.0,
+    "durationMs": {
+      "addBatch": 974,
+      "commitOffsets": 923,
+      "getBatch": 130,
+      "latestOffset": 889,
+      "queryPlanning": 644,
+      "triggerExecution": 4294,
+      "walCommit": 688
+    },
+    "stateOperators": [],
+    "sources": [
+      {
+        "description": "KafkaV2[Subscribe[a2_taxi_events]]",
+        "startOffset": null,
+        "endOffset": {
+          "a2_taxi_events": {
+            "1": 66,
+            "0": 60
+          }
+        },
+        "latestOffset": {
+          "a2_taxi_events": {
+            "1": 66,
+            "0": 60
+          }
+        },
+        "numInputRows": 0,
+        "inputRowsPerSecond": 0.0,
+        "processedRowsPerSecond": 0.0,
+        "metrics": {
+          "avgOffsetsBehindLatest": "0.0",
+          "maxOffsetsBehindLatest": "0",
+          "minOffsetsBehindLatest": "0"
+        }
+      }
+    ],
+    "sink": {
+      "description": "org.apache.spark.sql.execution.streaming.ConsoleTable$@65a055fb",
+      "numOutputRows": 0
+    },
+    "query_name": "a2_predictions_console"
+  },
+  {
+    "id": "616cc088-cc3b-4aec-a45c-b4c7281bad41",
+    "runId": "32fefc64-d676-414d-b4af-a4f6e955e49c",
+    "name": "a2_predictions_console",
+    "timestamp": "2026-10-06T19:33:30.001Z",
+    "batchId": 1,
+    "numInputRows": 1,
+    "inputRowsPerSecond": 0.2439619419370578,
+    "processedRowsPerSecond": 0.2579979360165119,
+    "durationMs": {
+      "addBatch": 1591,
+      "commitOffsets": 1304,
+      "getBatch": 1,
+      "latestOffset": 42,
+      "queryPlanning": 297,
+      "triggerExecution": 3876,
+      "walCommit": 637
+    },
+    "stateOperators": [],
+    "sources": [
+      {
+        "description": "KafkaV2[Subscribe[a2_taxi_events]]",
+        "startOffset": {
+          "a2_taxi_events": {
+            "1": 66,
+            "0": 60
+          }
+        },
+        "endOffset": {
+          "a2_taxi_events": {
+            "1": 66,
+            "0": 61
+          }
+        },
+        "latestOffset": {
+          "a2_taxi_events": {
+            "1": 66,
+            "0": 61
+          }
+        },
+        "numInputRows": 1,
+        "inputRowsPerSecond": 0.2439619419370578,
+        "processedRowsPerSecond": 0.2579979360165119,
+        "metrics": {
+          "avgOffsetsBehindLatest": "0.0",
+          "maxOffsetsBehindLatest": "0",
+          "minOffsetsBehindLatest": "0"
+        }
+      }
+    ],
+    "sink": {
+      "description": "org.apache.spark.sql.execution.streaming.ConsoleTable$@65a055fb",
+      "numOutputRows": 1000
+    },
+    "query_name": "a2_predictions_console"
+  },
+  {
+    "id": "616cc088-cc3b-4aec-a45c-b4c7281bad41",
+    "runId": "32fefc64-d676-414d-b4af-a4f6e955e49c",
+    "name": "a2_predictions_console",
+    "timestamp": "2026-10-06T19:33:35.000Z",
+    "batchId": 2,
+    "numInputRows": 1,
+    "inputRowsPerSecond": 0.20004000800160032,
+    "processedRowsPerSecond": 0.242600679281902,
+    "durationMs": {
+      "addBatch": 1948,
+      "commitOffsets": 592,
+      "getBatch": 1,
+      "latestOffset": 15,
+      "queryPlanning": 406,
+      "triggerExecution": 4122,
+      "walCommit": 1153
+    },
+    "stateOperators": [],
+    "sources": [
+      {
+        "description": "KafkaV2[Subscribe[a2_taxi_events]]",
+        "startOffset": {
+          "a2_taxi_events": {
+            "1": 66,
+            "0": 61
+          }
+        },
+        "endOffset": {
+          "a2_taxi_events": {
+            "1": 67,
+            "0": 61
+          }
+        },
+        "latestOffset": {
+          "a2_taxi_events": {
+            "1": 67,
+            "0": 61
+          }
+        },
+        "numInputRows": 1,
+        "inputRowsPerSecond": 0.20004000800160032,
+        "processedRowsPerSecond": 0.242600679281902,
+        "metrics": {
+          "avgOffsetsBehindLatest": "0.0",
+          "maxOffsetsBehindLatest": "0",
+          "minOffsetsBehindLatest": "0"
+        }
+      }
+    ],
+    "sink": {
+      "description": "org.apache.spark.sql.execution.streaming.ConsoleTable$@65a055fb",
+      "numOutputRows": 1000
+    },
+    "query_name": "a2_predictions_console"
+  },
+  {
+    "id": "616cc088-cc3b-4aec-a45c-b4c7281bad41",
+    "runId": "32fefc64-d676-414d-b4af-a4f6e955e49c",
+    "name": "a2_predictions_console",
+    "timestamp": "2026-10-06T19:33:40.001Z",
+    "batchId": 3,
+    "numInputRows": 1,
+    "inputRowsPerSecond": 0.1999600079984003,
+    "processedRowsPerSecond": 0.43630017452006986,
+    "durationMs": {
+      "addBatch": 1007,
+      "commitOffsets": 560,
+      "getBatch": 0,
+      "latestOffset": 16,
+      "queryPlanning": 87,
+      "triggerExecution": 2292,
+      "walCommit": 621
+    },
+    "stateOperators": [],
+    "sources": [
+      {
+        "description": "KafkaV2[Subscribe[a2_taxi_events]]",
+        "startOffset": {
+          "a2_taxi_events": {
+            "1": 67,
+            "0": 61
+          }
+        },
+        "endOffset": {
+          "a2_taxi_events": {
+            "1": 68,
+            "0": 61
+          }
+        },
+        "latestOffset": {
+          "a2_taxi_events": {
+            "1": 68,
+            "0": 61
+          }
+        },
+        "numInputRows": 1,
+        "inputRowsPerSecond": 0.1999600079984003,
+        "processedRowsPerSecond": 0.43630017452006986,
+        "metrics": {
+          "avgOffsetsBehindLatest": "0.0",
+          "maxOffsetsBehindLatest": "0",
+          "minOffsetsBehindLatest": "0"
+        }
+      }
+    ],
+    "sink": {
+      "description": "org.apache.spark.sql.execution.streaming.ConsoleTable$@65a055fb",
+      "numOutputRows": 1000
+    },
+    "query_name": "a2_predictions_console"
+  }
+]
