@@ -1,0 +1,65 @@
+{
+  "acknowledged_batches": 60,
+  "acknowledged_records": 60000,
+  "batch_size": 1000,
+  "bootstrap_servers": "kafka:9092",
+  "cleanup_errors": [],
+  "created_at_utc": "2026-10-06T09:48:41.519561+00:00",
+  "elapsed_seconds": 329.128,
+  "error": null,
+  "expected_records": 60000,
+  "finished_at_utc": "2026-10-06T09:56:35.940268+00:00",
+  "max_offsets_per_trigger": 10,
+  "model_path": "models/a2_model",
+  "planned_batches": 60,
+  "prediction_path": "output/streaming/20261006T094835Z_00163aef/predictions",
+  "producer_command": [
+    "/opt/conda/bin/python",
+    "/home/student/work/producer.py",
+    "--data-path",
+    "/home/student/work/data/stream_data.parquet",
+    "--bootstrap-servers",
+    "kafka:9092",
+    "--topic",
+    "a2_taxi_events",
+    "--batch-size",
+    "1000",
+    "--max-batches",
+    "60"
+  ],
+  "producer_exit_code": 0,
+  "producer_pause_seconds": 5,
+  "queries": [
+    {
+      "query_id": "3a62abbb-515f-4f9a-8032-95cc979359d8",
+      "query_name": "a2_monitor_predictions_parquet",
+      "query_run_id": "e6baf1b6-d9ab-4cc6-b68a-13bcca027b95"
+    },
+    {
+      "query_id": "96a4b24f-7edc-4fd3-9aa5-7d66d2b554b9",
+      "query_name": "a2_window_console",
+      "query_run_id": "d5d507dd-0b1f-46ad-856b-5628e198b7f9"
+    },
+    {
+      "query_id": "c7c152f8-e9cf-4282-8356-d9bcea55af53",
+      "query_name": "a2_window_parquet",
+      "query_run_id": "88481c15-2566-42d6-a044-d65a1d850cf8"
+    }
+  ],
+  "queries_stopped": true,
+  "run_id": "20261006T094835Z_00163aef",
+  "shuffle_partitions": 2,
+  "slide_seconds": 10,
+  "starting_offsets": {
+    "a2_taxi_events": {
+      "0": 2,
+      "1": 1
+    }
+  },
+  "status": "completed",
+  "topic": "a2_taxi_events",
+  "trigger_interval": "5 seconds",
+  "watermark_seconds": 30,
+  "window_path": "output/streaming/20261006T094835Z_00163aef/finalised_windows",
+  "window_seconds": 60
+}

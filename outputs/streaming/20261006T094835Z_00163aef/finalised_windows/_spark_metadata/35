@@ -1,0 +1,3 @@
+v1
+{"path":"file:///home/student/work/output/streaming/20261006T094835Z_00163aef/finalised_windows/part-00000-46fc355e-0d9b-47dc-928d-bf393b216c1f-c000.snappy.parquet","size":1788,"isDir":false,"modificationTime":1791280444039,"blockReplication":1,"blockSize":33554432,"action":"add"}
+{"path":"file:///home/student/work/output/streaming/20261006T094835Z_00163aef/finalised_windows/part-00001-3629e567-80e2-4227-bbd3-a4a2f9ecb8b4-c000.snappy.parquet","size":1698,"isDir":false,"modificationTime":1791280443948,"blockReplication":1,"blockSize":33554432,"action":"add"}

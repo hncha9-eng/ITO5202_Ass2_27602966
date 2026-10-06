@@ -1,0 +1,76 @@
+{
+  "eligible_batch_window_count": 191,
+  "ending_offsets": {
+    "0": 29,
+    "1": 34
+  },
+  "prediction_integrity": {
+    "invalid_predictions": 0,
+    "invalid_timestamps": 0,
+    "kafka_messages": 60,
+    "negative_predictions": 0,
+    "prediction_records": 60000,
+    "unique_event_identifiers": 60000
+  },
+  "producer_measurements": {
+    "acknowledged_batches": 60,
+    "acknowledged_records": 60000,
+    "maximum_delivery_seconds": 0.344265,
+    "maximum_payload_bytes": 302144,
+    "mean_publication_interval_seconds": 5.184281847457627
+  },
+  "producer_message_mismatches": 0,
+  "query_processing_times": [
+    {
+      "batches_over_trigger_interval": 10,
+      "data_micro_batches": 60,
+      "max_processing_seconds": 5.967,
+      "mean_processing_seconds": 4.194,
+      "query_name": "a2_monitor_predictions_parquet"
+    },
+    {
+      "batches_over_trigger_interval": 1,
+      "data_micro_batches": 60,
+      "max_processing_seconds": 6.963,
+      "mean_processing_seconds": 3.083,
+      "query_name": "a2_window_console"
+    },
+    {
+      "batches_over_trigger_interval": 29,
+      "data_micro_batches": 58,
+      "max_processing_seconds": 6.881,
+      "mean_processing_seconds": 5.08,
+      "query_name": "a2_window_parquet"
+    }
+  ],
+  "run_id": "20261006T094835Z_00163aef",
+  "status": "passed",
+  "watermark_and_state_metrics": [
+    {
+      "final_watermark": "2026-10-06T09:55:44.988Z",
+      "late_operator_rows": 0,
+      "query_name": "a2_window_console",
+      "remaining_state_rows": 34,
+      "state_rows_removed": 191
+    },
+    {
+      "final_watermark": "2026-10-06T09:55:44.988Z",
+      "late_operator_rows": 0,
+      "query_name": "a2_window_parquet",
+      "remaining_state_rows": 34,
+      "state_rows_removed": 191
+    }
+  ],
+  "window_comparison": {
+    "maximum_mean_difference_usd": 5.329070518200751e-13,
+    "mismatched_windows": 0
+  },
+  "window_integrity": {
+    "incorrect_slide_alignment": 0,
+    "incorrect_window_durations": 0,
+    "invalid_window_rows": 0,
+    "saved_window_rows": 191,
+    "unique_window_keys": 191,
+    "windows_beyond_final_watermark": 0
+  }
+}
